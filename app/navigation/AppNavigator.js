@@ -35,7 +35,7 @@ function AppNavigator(props) {
         }}
       />
       <Tab.Screen
-        name="Account"
+        name="My Account"
         component={Account}
         options={{
           tabBarIcon: ({ color, size }) => (
