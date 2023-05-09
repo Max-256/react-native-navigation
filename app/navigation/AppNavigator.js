@@ -1,11 +1,12 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Records from "../screens/Records";
 import Home from "../screens/Home";
 import Account from "../screens/Account";
+import HomeButton from "../components/HomeButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,11 +29,14 @@ function AppNavigator(props) {
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{
+        options={({ navigation }) => ({
+          tabBarButton: () => (
+            <HomeButton onPress={() => navigation.navigate("Home")} />
+          ),
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
-        }}
+        })}
       />
       <Tab.Screen
         name="My Account"
@@ -46,9 +50,5 @@ function AppNavigator(props) {
     </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 export default AppNavigator;
