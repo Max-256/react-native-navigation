@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Records from "../screens/Records";
-import Home from "../screens/Home";
+import HomeNavigator from "./HomeNavigator";
 import AccountNavigator from "./AccountNavigator";
 import HomeButton from "../components/HomeButton";
 
@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function AppNavigator(props) {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator initialRouteName="Hello, Good day!">
       <Tab.Screen
         name="Records"
         component={Records}
@@ -27,11 +27,13 @@ function AppNavigator(props) {
         }}
       />
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="Hello, Good day!"
+        component={HomeNavigator}
         options={({ navigation }) => ({
           tabBarButton: () => (
-            <HomeButton onPress={() => navigation.navigate("Home")} />
+            <HomeButton
+              onPress={() => navigation.navigate("Hello, Good day!")}
+            />
           ),
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
