@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import Records from "../screens/Records";
+import Records from "../screens/Records/Records";
 import HomeNavigator from "./HomeNavigator";
 import AccountNavigator from "./AccountNavigator";
 import HomeButton from "../components/HomeButton";
